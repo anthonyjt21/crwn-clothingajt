@@ -1,17 +1,16 @@
 import React from 'react';
 import './App.css';
-// import HomePage from './pages/homepage/homepage.component'
+ import HomePage from './pages/homepage/homepage.component'
 import {
   Switch, Route, Link
 } from 'react-router-dom';
 
-const HomePage = (props) =>{
+const HatsPage = (props) =>{
   console.log(props) 
   return (
-  <div>
-      {/* <Link to='/topics'>Topics</Link> */}
+  <div>     
       <button onClick ={() => props.history.push('/blog/asdq/topics')}>Topics</button>
-    <h1>Home Page</h1>
+    <h1>HatsPage Page</h1>
   </div>)
 }
 const TopicsList = (props) => {
@@ -42,6 +41,7 @@ function App() {
   return (
     <div>      
       <Route  exact path='/' component={HomePage} />
+      <Route  exact path='/hats' component={HatsPage} />
       <Route exact path='/blog/asdq/topics' component={TopicsList} />   
       <Route  path='/blog/asdq/topics/:topicId' component={TopicDetail} />          
       <Route exact path='/blog/topics' component={TopicsList} />   
