@@ -6,3 +6,4 @@ git commit -m "created project with create react app and added files for homepag
 git push origin master
 https://fonts.google.com/specimen/Open+Sans+Condensed?selection.family=Open+Sans+Condensed:300
 yarn add react-router-dom
+git pull origin master
