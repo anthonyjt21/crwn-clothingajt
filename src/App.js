@@ -24,21 +24,22 @@ componentDidMount(){
  this.unsubscribeFromAuth= auth.onAuthStateChanged(async userAuth=>{
     //this.setState({currentUser:user});
     if(userAuth){
+      /*,
+            ()=>{
+              console.log(this.state);
+          }*/
       const userRef = await createUserProfileDocument(userAuth);
-      userRef.onSnapshot(
-        snapShot => {
-        this.setState({
-          currentUser:{
-            id:snapShot.id,
-            ...snapShot.data()
-          }})/*,
-          ()=>{
-            console.log(this.state);
-         }*/
-        });    
-       this.setState({currentUser:userAuth});
+      userRef.onSnapshot( snapShot => {
+          this.setState({
+            currentUser:{
+              id:snapShot.id,
+              ...snapShot.data()
+            }
+          });
+          console.log(this.state);
+          });                
     }
-    
+    this.setState({currentUser:userAuth});
     //createUserProfileDocument(user);
     //console.log(user);
  });
