@@ -25,12 +25,20 @@ componentDidMount(){
     //this.setState({currentUser:user});
     if(userAuth){
       const userRef = await createUserProfileDocument(userAuth);
+      userRef.onSnapshot(
+        snapShot => {
+        this.setState({
+          currentUser:{
+            id:snapShot.id,
+            ...snapShot.data()
+          }})/*,
+          ()=>{
+            console.log(this.state);
+         }*/
+        });    
+       this.setState({currentUser:userAuth});
     }
-    userRef.onSnapshot(
-      snapShot => {
-        console.log(snapShot);
-      }
-    );
+    
     //createUserProfileDocument(user);
     //console.log(user);
  });
