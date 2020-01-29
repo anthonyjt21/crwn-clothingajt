@@ -8,3 +8,5 @@ https://fonts.google.com/specimen/Open+Sans+Condensed?selection.family=Open+Sans
 yarn add react-router-dom
 git pull origin master
 yarn add firebase
+--install redux
+yarn add redux redux-logger react-redux
