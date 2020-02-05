@@ -40,17 +40,17 @@ class SignUp extends React.Component{
         }catch (error ){
             console.error(error);
         }
-    }
+    };
 
     handleChange = event =>{
         const{name , value} = event.target;
         this.setState({[name]: value } );
-    }
+    };
      render() {
          const {displayName, email, password, confirmPassword}= this.state;
          return (
              <div className='sign up'>
-             <h2 className='title'> I do not have a </h2>
+             <h2 className='title'> I do not have a account</h2>
              <span>Sign up with your email and password</span>
              <form className='sign up form' 
              onSubmit={this.handleSubmit}>
@@ -72,7 +72,7 @@ class SignUp extends React.Component{
                  name='password'
                  value={password}
                  onChange ={this.handleChange}
-                 label='password'
+                 label='Password'
                  required
                  />
                  <FormInput type='password'

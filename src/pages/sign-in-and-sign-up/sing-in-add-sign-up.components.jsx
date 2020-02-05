@@ -1,8 +1,9 @@
 import React from 'react';
 
-import './sing-in-add-sign-up.components.scss';
+
 import SignIn from '../../components/sign-in/sign-in.component'
 import SignUp from '../../components/sign-up/sign-up-component'
+import './sing-in-add-sign-up.components.scss';
 
 const SignInAndSignUpPage = () => (
     <div className='sign-in-and-sign-up'>
@@ -11,3 +12,4 @@ const SignInAndSignUpPage = () => (
     </div>
 );
 export default SignInAndSignUpPage;
+
