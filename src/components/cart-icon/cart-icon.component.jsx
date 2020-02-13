@@ -20,11 +20,13 @@ const CartIcon = ({toogleCartHidden,itemCount}) => (
     </div>
 )
 
-const mapDispatchToProps = dispatch => (
+const mapDispatchToProps = dispatch => {
+    console.log("mapDispatchToProps event");   
+    return (
     {
         toogleCartHidden: () => dispatch(toogleCartHidden())
-    }
-);
+    })
+};
 
 const mapStateToProps = createStructuredSelector({
   itemCount: selectCartItemsCount
