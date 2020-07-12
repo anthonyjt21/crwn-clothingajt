@@ -19,3 +19,14 @@ Setting buildpack to https://github.com/anthonyjt21/crwn-clothingajt.git... done
 https://ecom-ajt-live.herokuapp.com/ | https://git.heroku.com/ecom-ajt-live.git
 
 C:\anthony\crwn-clothingajt>git push heroku master
+
+heroku buildpacks:set heroku/nodejs
+
+heroku buildpacks:set https://github.com/heroku/heroku-buildpack-python.git
+
+https://github.com/heroku/heroku-buildpack-nodejs
+
+C:\anthony\crwn-clothingajt>heroku buildpacks:set heroku/nodejs
+
+https://git.heroku.com/ecom-ajt-live.git
+https://ecom-ajt-live.herokuapp.com/ deployed to Heroku
