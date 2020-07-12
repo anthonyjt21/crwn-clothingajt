@@ -10,6 +10,7 @@ git pull origin master
 yarn add firebase
 --install redux
 yarn add redux redux-logger react-redux
+
 yarn add redux-persist
 yarn add react-stripe-checkout
 ______heroku_______
