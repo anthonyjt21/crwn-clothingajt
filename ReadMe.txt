@@ -12,3 +12,10 @@ yarn add firebase
 yarn add redux redux-logger react-redux
 yarn add redux-persist
 yarn add react-stripe-checkout
+______heroku_______
+C:\anthony\crwn-clothingajt>heroku create ecom-ajt-live --buildpack https://github.com/anthonyjt21/crwn-clothingajt.git
+Creating ⬢ ecom-ajt-live... done
+Setting buildpack to https://github.com/anthonyjt21/crwn-clothingajt.git... done
+https://ecom-ajt-live.herokuapp.com/ | https://git.heroku.com/ecom-ajt-live.git
+
+C:\anthony\crwn-clothingajt>git push heroku master
