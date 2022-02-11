@@ -39,8 +39,7 @@ class App extends React.Component {
 				});
 			}
 			setCurrentUser(userAuth);
-			console.log("addCollectionAndDocuments");
-			console.log(collectionsArray);
+			console.log("addCollectionAndDocuments");		
 			//addCollectionAndDocuments("collections", collectionsArray);
 			//createUserProfileDocument(user);
 			//console.log(user);
