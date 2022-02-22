@@ -8,14 +8,14 @@ import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 import { SignUpContainer, SignUpTitle } from './sign-up.styles';
 
 const SignUp =({signUpStart})=> {
-  const [userCredentials, setUserCredentials]= useState({
+  const [userCredentials, setCredentials]= useState({
     displayName: '',
     email: '',
     password: '',
     confirmPassword: ''
   });
   const { displayName, email, password, confirmPassword } = userCredentials;
-  handleSubmit = async event => {
+ const handleSubmit = async event => {
     event.preventDefault();
 
     if (password !== confirmPassword) {
@@ -31,35 +31,36 @@ const SignUp =({signUpStart})=> {
 
       await createUserProfileDocument(user, { displayName });
 
-      this.setState({
+      setCredentials({displayName:'',email: '', password: '',confirmPassword:''});
+      /*this.setState({
         displayName: '',
         email: '',
         password: '',
         confirmPassword: ''
-      });
+      });*/
     } catch (error) {
       console.error(error);
     }
   };
 
-  handleChange = event => {
-    const { name, value } = event.target;
+  const handleChange = event => {
+    const {value, name} = event.target;
 
-    this.setState({ [name]: value });
+		setCredentials({...userCredentials, [name]: value});
+   
   };
-
-  render() {
-    const { displayName, email, password, confirmPassword } = this.state;
+ // const { displayName, email, password, confirmPassword } = this.state;
+   
     return (
       <SignUpContainer>
         <SignUpTitle>I do not have a account</SignUpTitle>
         <span>Sign up with your email and password</span>
-        <form className='sign-up-form' onSubmit={this.handleSubmit}>
+        <form className='sign-up-form' onSubmit={handleSubmit}>
           <FormInput
             type='text'
             name='displayName'
             value={displayName}
-            onChange={this.handleChange}
+            onChange={handleChange}
             label='Display Name'
             required
           />
@@ -67,7 +68,7 @@ const SignUp =({signUpStart})=> {
             type='email'
             name='email'
             value={email}
-            onChange={this.handleChange}
+            onChange={handleChange}
             label='Email'
             required
           />
@@ -75,7 +76,7 @@ const SignUp =({signUpStart})=> {
             type='password'
             name='password'
             value={password}
-            onChange={this.handleChange}
+            onChange={handleChange}
             label='Password'
             required
           />
@@ -83,15 +84,14 @@ const SignUp =({signUpStart})=> {
             type='password'
             name='confirmPassword'
             value={confirmPassword}
-            onChange={this.handleChange}
+            onChange={handleChange}
             label='Confirm Password'
             required
           />
           <CustomButton type='submit'>SIGN UP</CustomButton>
         </form>
       </SignUpContainer>
-    );
-  }
+    );  
 }
 
 export default SignUp;
