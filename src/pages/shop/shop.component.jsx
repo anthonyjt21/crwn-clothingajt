@@ -27,12 +27,20 @@ class ShopPage extends React.Component {
     const { updateCollections } = this.props;
     const collectionRef = firestore.collection("collections");
 
-    collectionRef.get().then((snapshot) => {
+   /* fetch('https://firestore.googleapis.com/v1/projects/crw-db-3044e/databases/(default)/documents/collections'
+    ).then(response => response.json())
+    .then(collections => console.log(collections));
+*/
+     collectionRef.get().then((snapshot) => {
       const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
-      updateCollections(collectionsMap);
-      this.setState({ loading: false });
-    });
+       updateCollections(collectionsMap);
+       this.setState({ loading: false });
+     });
   }
+  //https://firestore.googleapis.com/v1/projects/YOUR_PROJECT_ID/databases/(default)/documents/cities/LA
+  //https://firestore.googleapis.com/v1/projects/crw-db-3044e/databases/(default)/documents/cities/LA
+
+
 
   render() {
     const { match } = this.props;
