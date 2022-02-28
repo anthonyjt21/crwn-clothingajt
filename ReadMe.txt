@@ -33,3 +33,5 @@ https://git.heroku.com/ecom-ajt-live.git
 https://ecom-ajt-live.herokuapp.com/ deployed to Heroku
 
 C:\anthony\crwn-clothingajt>yarn add styled-components
+
+npm rebuild node-sass

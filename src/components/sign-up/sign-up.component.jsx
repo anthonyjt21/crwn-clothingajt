@@ -23,8 +23,7 @@ const SignUp = ({signUpStart}) => {
 			alert("passwords don't match");
 			return;
 		}
-   signUpStart({displayName,email, password});
-		// setCredentials({displayName:'',email: '', password: '',confirmPassword:''});
+		signUpStart({displayName, email, password});
 	};
 
 	const handleChange = (event) => {
@@ -79,4 +78,4 @@ const SignUp = ({signUpStart}) => {
 const mapDispatchToProps = (dispatch) => ({
 	signUpStart: (userCredentials) => dispatch(signUpStart(userCredentials)),
 });
-export default connect(null,mapDispatchToProps)(SignUp);
+export default connect(null, mapDispatchToProps)(SignUp);
