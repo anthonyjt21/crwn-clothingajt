@@ -35,3 +35,8 @@ https://ecom-ajt-live.herokuapp.com/ deployed to Heroku
 C:\anthony\crwn-clothingajt>yarn add styled-components
 
 npm rebuild node-sass
+npm audit fix --force
+npm cache clean --force
+npm install -g npm@7.6.0
+npm install
+npm start
