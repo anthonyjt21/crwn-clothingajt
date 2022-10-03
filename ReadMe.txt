@@ -1,6 +1,10 @@
 npx create-react-app crwn-cloting
+
+git reset –hard
+git clean -fxd
+
 yarn add node-sass
-git config --global http.proxy http://cm.dga.gob.ni:8080
+git config --global http.proxy http://xx.xx.xx.xx:8080
 git add -A
 git commit -m "created project with create react app and added files for homepage"
 git push origin master
